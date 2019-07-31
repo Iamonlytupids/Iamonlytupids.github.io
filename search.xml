@@ -8,7 +8,7 @@
       <link href="/2019/07/31/test/"/>
       <url>/2019/07/31/test/</url>
       
-        <content type="html"><![CDATA[<h2 id="Only-a-test"><a href="#Only-a-test" class="headerlink" title="Only a test"></a>Only a test</h2><p>title: test<br>date: 2019/7/31</p><h2 id="tag-test"><a href="#tag-test" class="headerlink" title="tag: test"></a>tag: test</h2>]]></content>
+        <content type="html"><![CDATA[<p>Only a test</p><hr><p>title: test<br>date: 2019-7-31 21:27<br>categories: 测试</p><h2 id="tag-测试"><a href="#tag-测试" class="headerlink" title="tag: 测试"></a>tag: 测试</h2>]]></content>
       
       
       
