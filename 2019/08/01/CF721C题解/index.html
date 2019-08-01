@@ -282,7 +282,65 @@
 <p></p>
 
 <p>代码:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 5010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 1000000001</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rei register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rel register ll</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> to,next,w;</span><br><span class="line">&#125;edge[maxn],n_edge[maxn];</span><br><span class="line"><span class="keyword">int</span> n,m,t;</span><br><span class="line"><span class="keyword">int</span> head[maxn],tot,n_tot,n_head[maxn];</span><br><span class="line"><span class="keyword">int</span> entry[maxn];</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn],prevv[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>&#123;</span><br><span class="line">	edge[++tot].to=v,edge[tot].next=head[u],edge[tot].w=w,head[u]=tot; </span><br><span class="line">	n_edge[++n_tot].to=u,n_edge[n_tot].next=n_head[v],n_edge[n_tot].w=w,n_head[v]=n_tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;t);</span><br><span class="line">	<span class="keyword">for</span>(rei i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v,w;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">		add(u,v,w);</span><br><span class="line">		++entry[v];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(rei i=<span class="number">0</span>;i&lt;=n;++i)</span><br><span class="line">	 <span class="keyword">for</span>(rei j=<span class="number">0</span>;j&lt;=n;++j)</span><br><span class="line">	  dp[i][j]=inf;</span><br><span class="line">    <span class="keyword">int</span> q[maxn],hhead=<span class="number">1</span>,tail=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(rei i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="keyword">if</span>(!entry[i])</span><br><span class="line">    q[++tail]=i;</span><br><span class="line">    dp[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(hhead&lt;=tail)&#123;</span><br><span class="line">    	<span class="keyword">int</span> p=q[hhead++];</span><br><span class="line">    	<span class="keyword">for</span>(rei j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">    	<span class="keyword">for</span>(rei i=n_head[p];i;i=n_edge[i].next)</span><br><span class="line">    	<span class="keyword">if</span>(dp[n_edge[i].to][j<span class="number">-1</span>]+n_edge[i].w&lt;dp[p][j])</span><br><span class="line">    	dp[p][j]=dp[n_edge[i].to][j<span class="number">-1</span>]+n_edge[i].w,prevv[p][j]=n_edge[i].to;</span><br><span class="line">    	<span class="keyword">for</span>(rei i=head[p];i;i=edge[i].next)&#123;</span><br><span class="line">    	entry[edge[i].to]--;</span><br><span class="line">    	<span class="keyword">if</span>(!entry[edge[i].to])</span><br><span class="line">    	q[++tail]=edge[i].to;</span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">	<span class="keyword">for</span>(rei i=n;i;i--)</span><br><span class="line">	<span class="keyword">if</span>(dp[n][i]&lt;=t)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">	    <span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line">	    <span class="keyword">int</span> s[maxn],top=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(rei j=n;j;j=prevv[j][i-tot],tot++)</span><br><span class="line">		s[++top]=j;</span><br><span class="line">		<span class="keyword">for</span>(rei j=top;j;j--)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,s[j]);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C++">#include &lt;bits/stdc++.h&gt;
+#define maxn 5010
+#define inf 1000000001
+#define rei register int
+#define rel register ll
+using namespace std;
+struct node{
+    int to,next,w;
+}edge[maxn],n_edge[maxn];
+int n,m,t;
+int head[maxn],tot,n_tot,n_head[maxn];
+int entry[maxn];
+int dp[maxn][maxn],prevv[maxn][maxn];
+void add(int u,int v,int w){
+    edge[++tot].to=v,edge[tot].next=head[u],edge[tot].w=w,head[u]=tot; 
+    n_edge[++n_tot].to=u,n_edge[n_tot].next=n_head[v],n_edge[n_tot].w=w,n_head[v]=n_tot;
+}
+int main(){
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;t);
+    for(rei i=1;i&lt;=m;++i){
+        int u,v,w;
+        scanf(&quot;%d%d%d&quot;,&amp;u,&amp;v,&amp;w);
+        add(u,v,w);
+        ++entry[v];
+    }
+    for(rei i=0;i&lt;=n;++i)
+     for(rei j=0;j&lt;=n;++j)
+      dp[i][j]=inf;
+    int q[maxn],hhead=1,tail=0;
+    for(rei i=1;i&lt;=n;++i)
+    if(!entry[i])
+    q[++tail]=i;
+    dp[1][1]=0;
+    while(hhead&lt;=tail){
+        int p=q[hhead++];
+        for(rei j=1;j&lt;=n;++j)
+        for(rei i=n_head[p];i;i=n_edge[i].next)
+        if(dp[n_edge[i].to][j-1]+n_edge[i].w&lt;dp[p][j])
+        dp[p][j]=dp[n_edge[i].to][j-1]+n_edge[i].w,prevv[p][j]=n_edge[i].to;
+        for(rei i=head[p];i;i=edge[i].next){
+        entry[edge[i].to]--;
+        if(!entry[edge[i].to])
+        q[++tail]=edge[i].to;
+        }
+       }
+    for(rei i=n;i;i--)
+    if(dp[n][i]&lt;=t){
+        printf(&quot;%d\n&quot;,i);
+        int tot=0;
+        int s[maxn],top=0;
+        for(rei j=n;j;j=prevv[j][i-tot],tot++)
+        s[++top]=j;
+        for(rei j=top;j;j--)
+        printf(&quot;%d &quot;,s[j]);
+        return 0;
+    }
+    return 0;
+}</code></pre>
+
       
        
     </div>
