@@ -16,7 +16,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://i1.fuimg.com/695859/47ced28eae1bc43b.png">
 <meta property="og:image" content="http://i1.fuimg.com/695859/a2f2d1bf3050a8da.png">
-<meta property="og:updated_time" content="2019-08-01T14:17:51.689Z">
+<meta property="og:updated_time" content="2019-08-01T14:20:17.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SHOI2012随机树 题解">
 <meta name="twitter:description" content="题目描述 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4  输出1 2.166667  输入2 2 4  输出2 2.6666">
@@ -229,7 +229,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 22:17:51'>2019-08-01 21:08</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 22:20:17'>2019-08-01 21:08</time>
         
     </div>
     <div class="article-meta">
@@ -308,7 +308,7 @@
 </blockquote>
 <h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p><img src="http://i1.fuimg.com/695859/a2f2d1bf3050a8da.png" alt="数据范围"></p>
 <p>第一眼看到期望就会想到DP</p>
-<p>接下来考虑如何设计能够转移的DP状态。</p>
+<p>我们尝试设计一个能够转移的DP状态</p>
 <p>先思考1问题</p>
 <p>我们可以考虑将操作的次数设计为DP的第一维</p>
 <p>这样我们就可以得到一个DP状态 $E[i]$ 表示经过 $i$ 次操作后叶节点的深度和的期望(问题1要求的是平均深度,最后将求得的期望除以最后的叶节点个数就可求出)</p>
