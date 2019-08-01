@@ -6,17 +6,17 @@
   <meta name="keywords" content>
   <meta name="description" content="Hello World | Iamonlytupids&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="# 题目简述 一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包括">
+<meta name="description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="721C题解">
 <meta property="og:url" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io.git/2019/08/01/721C题解/index.html">
 <meta property="og:site_name" content="Iamonlytupids&#39;s blog">
-<meta property="og:description" content="# 题目简述 一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包括">
+<meta property="og:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T05:39:54.908Z">
+<meta property="og:updated_time" content="2019-08-01T05:42:02.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="721C题解">
-<meta name="twitter:description" content="# 题目简述 一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包括">
+<meta name="twitter:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -231,12 +231,16 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
