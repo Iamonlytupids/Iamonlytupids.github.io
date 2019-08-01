@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Iamonlytupids&#39;s blog">
 <meta property="og:description" content="题目描述 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4  输出1 2.166667  输入2 2 4  输出2 2.6666">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.png">
-<meta property="og:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1.png">
-<meta property="og:updated_time" content="2019-08-01T13:57:43.919Z">
+<meta property="og:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.jpg">
+<meta property="og:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1.jpg">
+<meta property="og:updated_time" content="2019-08-01T14:01:13.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SHOI2012随机树 题解">
 <meta name="twitter:description" content="题目描述 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4  输出1 2.166667  输入2 2 4  输出2 2.6666">
-<meta name="twitter:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.png">
+<meta name="twitter:image" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.jpg">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -87,7 +87,7 @@
     
         
             
-            <li><div data-rel="数学">数学<small>(1)</small></div>
+            <li><div data-rel="图论">图论<small>(1)</small></div>
                 
             </li>
             
@@ -95,7 +95,7 @@
     
         
             
-            <li><div data-rel="图论">图论<small>(1)</small></div>
+            <li><div data-rel="数学">数学<small>(1)</small></div>
                 
             </li>
             
@@ -144,6 +144,14 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">拓扑排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">图</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">概率</a>
     </li>
     
@@ -153,14 +161,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">DP</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">拓扑排序</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">图</a>
     </li>
     
     <div class="clearfix"></div>
@@ -173,20 +173,20 @@
     
     <nav id="title-list-nav">
         
-        <a  class="数学 "
-           href="/2019/08/01/SHOI2012随机树 题解/"
-           data-tag="概率,期望,DP"
-           data-author="" >
-            <span class="post-title" title="SHOI2012随机树 题解">SHOI2012随机树 题解</span>
-            <span class="post-date" title="2019-08-01 21:08:00">2019/08/01</span>
-        </a>
-        
         <a  class="图论 "
            href="/2019/08/01/CF721C题解/"
            data-tag="拓扑排序,图"
            data-author="" >
             <span class="post-title" title="CF721C题解">CF721C题解</span>
             <span class="post-date" title="2019-08-01 13:38:00">2019/08/01</span>
+        </a>
+        
+        <a  class="数学 "
+           href="/2019/08/01/SHOI2012随机树 题解/"
+           data-tag="概率,期望,DP"
+           data-author="" >
+            <span class="post-title" title="SHOI2012随机树 题解">SHOI2012随机树 题解</span>
+            <span class="post-date" title="2019-08-01 21:08:00">2019/08/01</span>
         </a>
         
     </nav>
@@ -270,7 +270,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#概率','#期望','#DP','#拓扑排序','#图',],
+            'data': ['#拓扑排序','#图','#概率','#期望','#DP',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
