@@ -6,18 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="Iamonlytupids&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点时依次经过的景点(包括 $1">
-<meta name="keywords" content="拓扑排序,图">
+<meta name="description" content="题目描述![题目描述]([SHOI2012]随机树 题解/题目描述.png) 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4">
+<meta name="keywords" content="概率,期望,DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF721C题解">
-<meta property="og:url" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io.git/2019/08/01/CF721C题解/index.html">
+<meta property="og:title" content="SHOI2012随机树 题解">
+<meta property="og:url" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io.git/2019/08/01/[SHOI2012]随机树 题解/index.html">
 <meta property="og:site_name" content="Iamonlytupids&#39;s blog">
-<meta property="og:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点时依次经过的景点(包括 $1">
+<meta property="og:description" content="题目描述![题目描述]([SHOI2012]随机树 题解/题目描述.png) 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T12:54:42.605Z">
+<meta property="og:updated_time" content="2019-08-01T13:13:47.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CF721C题解">
-<meta name="twitter:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点时依次经过的景点(包括 $1">
+<meta name="twitter:title" content="SHOI2012随机树 题解">
+<meta name="twitter:description" content="题目描述![题目描述]([SHOI2012]随机树 题解/题目描述.png) 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -80,11 +80,19 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(1)</small></div></li>
+    <li><div class="all active">全部文章<small>(2)</small></div></li>
     
         
             
             <li><div data-rel="图论">图论<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数学">数学<small>(1)</small></div>
                 
             </li>
             
@@ -100,7 +108,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="1">
+<input type="hidden" id="yelog_site_posts_number" value="2">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -140,6 +148,18 @@
         <a href="javascript:" class="color2">图</a>
     </li>
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">概率</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">期望</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">DP</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -156,6 +176,14 @@
            data-author="" >
             <span class="post-title" title="CF721C题解">CF721C题解</span>
             <span class="post-date" title="2019-08-01 13:38:00">2019/08/01</span>
+        </a>
+        
+        <a  class="数学 "
+           href="/2019/08/01/[SHOI2012]随机树 题解/"
+           data-tag="概率,期望,DP"
+           data-author="" >
+            <span class="post-title" title="SHOI2012随机树 题解">SHOI2012随机树 题解</span>
+            <span class="post-date" title="2019-08-01 21:08:00">2019/08/01</span>
         </a>
         
     </nav>
@@ -239,7 +267,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#拓扑排序','#图',],
+            'data': ['#拓扑排序','#图','#概率','#期望','#DP',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
