@@ -2,20 +2,21 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>721C题解 | Iamonlytupids&#39;s blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="721C题解 | Iamonlytupids&#39;s blog">
+  <title>CF721C题解 | Iamonlytupids&#39;s blog</title>
+  <meta name="keywords" content=" 拓扑排序 ">
+  <meta name="description" content="CF721C题解 | Iamonlytupids&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
+<meta name="keywords" content="拓扑排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="721C题解">
-<meta property="og:url" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io.git/2019/08/01/721C题解/index.html">
+<meta property="og:title" content="CF721C题解">
+<meta property="og:url" content="https://github.com/Iamonlytupids/Iamonlytupids.github.io.git/2019/08/01/CF721C题解/index.html">
 <meta property="og:site_name" content="Iamonlytupids&#39;s blog">
 <meta property="og:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T05:44:37.242Z">
+<meta property="og:updated_time" content="2019-08-01T05:46:54.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="721C题解">
+<meta name="twitter:title" content="CF721C题解">
 <meta name="twitter:description" content="题目简述一座城市里有 $n$ 个景点,景点从 $1$ 到 $n$ 进行编号有些景点之间设有单向的道路,Irina经过 $i$ 道路要时间 $t_i$ ,这 $n$ 个城市和这些道路形成无环图,Irina从 $1$ 号景点出发到 $n$ 号景点Irina想知道在行驶总时间不超过 $T$ 的情况下最多能游览几个景点(前提是他要到达 $n$ 号景点),以及他游览最多景点&amp;gt;时依次经过的景点(包">
 
 
@@ -131,6 +132,10 @@
     </form>
     <div class="tags-list">
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">拓扑排序</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -142,10 +147,10 @@
     <nav id="title-list-nav">
         
         <a  class="图论 "
-           href="/2019/08/01/721C题解/"
-           data-tag=""
+           href="/2019/08/01/CF721C题解/"
+           data-tag="拓扑排序"
            data-author="" >
-            <span class="post-title" title="721C题解">721C题解</span>
+            <span class="post-title" title="CF721C题解">CF721C题解</span>
             <span class="post-date" title="2019-08-01 13:38:00">2019/08/01</span>
         </a>
         
@@ -161,9 +166,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-721C题解" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-CF721C题解" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">721C题解</h1>
+        <h1 class="article-title">CF721C题解</h1>
     
     <div class="article-meta">
         
@@ -176,10 +181,16 @@
         </span>
         
         
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">拓扑排序</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 13:44:37'>2019-08-01 13:38</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 13:46:54'>2019-08-01 13:38</time>
         
     </div>
     <div class="article-meta">
@@ -377,7 +388,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': [],
+            'data': ['#拓扑排序',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
