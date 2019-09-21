@@ -15,8 +15,8 @@
 <meta property="og:description" content="题目描述 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4  输出1 2.166667  输入2 2 4  输出2 2.6666">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://i1.fuimg.com/695859/47ced28eae1bc43b.png">
-<meta property="og:image" content="http://i1.fuimg.com/695859/a2f2d1bf3050a8da.png">
-<meta property="og:updated_time" content="2019-08-02T04:36:58.324Z">
+<meta property="og:image" content="http://i2.tiimg.com/695859/a2f2d1bf3050a8da.png">
+<meta property="og:updated_time" content="2019-09-21T04:19:16.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SHOI2012随机树 题解">
 <meta name="twitter:description" content="题目描述 输入格式输入仅有一行,包含两个正整数 $q,n$ ,分别表示问题编号以及叶结点的个数。 输出格式输出仅有一行，包含一个实数 $d$ ，四舍五入精确到小数点后 6 位。如果 $q = 1$ ，则 $d$ 表示叶结点平均深度的数学期望值；如果 $q = 2$ ，则 $d$  表示树深度的数学期望值。 样例输入1 1 4  输出1 2.166667  输入2 2 4  输出2 2.6666">
@@ -87,7 +87,7 @@
     
         
             
-            <li><div data-rel="图论">图论<small>(1)</small></div>
+            <li><div data-rel="数学">数学<small>(1)</small></div>
                 
             </li>
             
@@ -95,7 +95,7 @@
     
         
             
-            <li><div data-rel="数学">数学<small>(1)</small></div>
+            <li><div data-rel="图论">图论<small>(1)</small></div>
                 
             </li>
             
@@ -144,14 +144,6 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">拓扑排序</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">图</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">概率</a>
     </li>
     
@@ -161,6 +153,14 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">DP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">拓扑排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">图</a>
     </li>
     
     <div class="clearfix"></div>
@@ -173,20 +173,20 @@
     
     <nav id="title-list-nav">
         
-        <a  class="图论 "
-           href="/2019/08/01/CF721C题解/"
-           data-tag="拓扑排序,图"
-           data-author="" >
-            <span class="post-title" title="CF721C题解">CF721C题解</span>
-            <span class="post-date" title="2019-08-01 13:38:00">2019/08/01</span>
-        </a>
-        
         <a  class="数学 "
            href="/2019/08/01/SHOI2012随机树 题解/"
            data-tag="概率,期望,DP"
            data-author="" >
             <span class="post-title" title="SHOI2012随机树 题解">SHOI2012随机树 题解</span>
             <span class="post-date" title="2019-08-01 21:08:00">2019/08/01</span>
+        </a>
+        
+        <a  class="图论 "
+           href="/2019/08/01/CF721C题解/"
+           data-tag="拓扑排序,图"
+           data-author="" >
+            <span class="post-title" title="CF721C题解">CF721C题解</span>
+            <span class="post-date" title="2019-08-01 13:38:00">2019/08/01</span>
         </a>
         
     </nav>
@@ -229,7 +229,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-02 12:36:58'>2019-08-01 21:08</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-21 12:19:16'>2019-08-01 21:08</time>
         
     </div>
     <div class="article-meta">
@@ -306,7 +306,7 @@
 <h4 id="输出4"><a href="#输出4" class="headerlink" title="输出4"></a>输出4</h4><blockquote>
 <p>5.916614</p>
 </blockquote>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p><img src="http://i1.fuimg.com/695859/a2f2d1bf3050a8da.png" alt="数据范围"></p>
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><p><img src="http://i2.tiimg.com/695859/a2f2d1bf3050a8da.png" alt="数据范围"></p>
 <p>第一眼看到期望就会想到DP</p>
 <p>我们尝试设计一个能够转移的DP状态</p>
 <p>先思考1问题</p>
@@ -488,7 +488,7 @@ int main(){
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#拓扑排序','#图','#概率','#期望','#DP',],
+            'data': ['#概率','#期望','#DP','#拓扑排序','#图',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
